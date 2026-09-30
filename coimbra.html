@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COIMBRA TREES — Martins Arguello</title>
+<style>
+  :root{--bk:#000;--gy:#767676;--li:#f2f2f2;--bd:#e6e6e6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Helvetica,Arial,Inter,sans-serif;background:#fff;color:#000;-webkit-font-smoothing:antialiased}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--bd);z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+  .logo{font-weight:900;font-size:22px;letter-spacing:-.5px}
+  .logo span{font-weight:400}
+  nav{display:flex;gap:22px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  nav a{color:#000;text-decoration:none}
+  nav a:hover{text-decoration:underline}
+  .hero{padding:64px 24px 24px;max-width:1300px;margin:0 auto}
+  .hero h1{font-size:clamp(56px,9vw,128px);line-height:.9;letter-spacing:-.04em;font-weight:900}
+  .hero p{margin-top:16px;font-size:18px;max-width:760px;color:#111}
+  .meta{margin-top:12px;font-size:13px;color:var(--gy);text-transform:uppercase;letter-spacing:.06em}
+  .filters{max-width:1300px;margin:0 auto;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+  .filters button{border:1px solid #000;background:#fff;padding:8px 14px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+  .filters button.on,.filters button:hover{background:#000;color:#fff}
+  .grid{max-width:1300px;margin:0 auto;padding:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}.hero{padding-top:36px}}
+  .card{border:1px solid var(--bd);display:flex;flex-direction:column;background:#fff}
+  .img{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--li);border-bottom:1px solid var(--bd);overflow:hidden}
+  .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .credit{font-size:11px;color:var(--gy);margin-top:6px}
+  .credit a{color:#000}
+  .card-body{padding:16px}
+  .card-body h2{font-size:22px;letter-spacing:-.02em;line-height:1}
+  .lat{font-style:italic;font-size:14px;color:#333;margin-top:4px}
+  .loc{font-size:12px;color:var(--gy);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
+  .tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;border:1px solid #000;padding:3px 8px;text-transform:uppercase}
+  .arch{margin-top:12px;font-size:14px;line-height:1.5;color:#222}
+  .comfort{margin-top:10px;font-size:13px;line-height:1.5;background:#000;color:#fff;padding:10px 12px}
+  .src{margin-top:10px;font-size:12px;color:var(--gy)}
+  .src a{color:#000}
+  footer{border-top:1px solid var(--bd);padding:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--gy);max-width:1300px;margin:20px auto 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">MARTINS<span> ARGUELLO</span></div>
+  <nav><a href="#">Projects</a><a href="#">About</a><a href="#">Sources</a><a href="#">Contact</a></nav>
+</header>
+
+<div class="hero">
+  <h1>COIMBRA<br>TREES</h1>
+  <p>10 most common tree species in Coimbra, Portugal — Environment, Comfort and Energy Efficiency. Each tree as an architecture device: shade, wind, water.</p>
+  <div class="meta">Coimbra, Portugal — Choupal / Vale de Canas / Av. Sá da Bandeira — 2026</div>
+</div>
+
+<div class="filters" id="filters">
+  <button data-f="all" class="on">All</button>
+  <button data-f="riparian">Riparian</button>
+  <button data-f="urban">Urban</button>
+  <button data-f="exotic">Exotic</button>
+</div>
+
+<div class="grid" id="grid">
+
+  <div class="card" data-c="riparian">
+    <div class="img"><img src="images/populus-nigra.jpg" alt="Choupo-negro Populus nigra" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Choupo-negro</h2><div class="lat">Populus nigra</div>
+      <div class="loc">Mata do Choupal, Mondego</div><span class="tag">Riparian</span>
+      <div class="arch"><b>Architecture:</b> planted since 1791 to fix banks and diffuse floods; linear forest protecting Baixa / Santa Clara.</div>
+      <div class="comfort">Deciduous fast shade in summer, sun in winter. Evapotranspirative cooling.</div>
+      <div class="src">Fonte: <a href="https://pt.wikipedia.org/wiki/Mata_Nacional_do_Choupal">PT Wikipedia Choupal</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="urban">
+    <div class="img"><img src="images/platanus.jpg" alt="Plátano Platanus x hispanica" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Plátano</h2><div class="lat">Platanus x hispanica</div>
+      <div class="loc">Av. Sá da Bandeira, Emídio Navarro</div><span class="tag">Urban</span>
+      <div class="arch"><b>Architecture:</b> avenue tree shading limestone facades, sidewalks and Metrobus stops; &gt;40m in Choupal.</div>
+      <div class="comfort">Wide deciduous crown = passive solar control.</div>
+      <div class="src">Fonte: <a href="https://poligrafo.sapo.pt/fact-check/projeto-do-metrobus-em-coimbra-preve-abate-de-arvores-de-grande-dimensao-na-avenida-sa-da-bandeira">Polígrafo Coimbra</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="riparian">
+    <div class="img"><img src="images/fraxinus.jpg" alt="Freixo Fraxinus angustifolia" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Freixo</h2><div class="lat">Fraxinus angustifolia</div>
+      <div class="loc">Choupal sub-bosque</div><span class="tag">Riparian</span>
+      <div class="arch"><b>Architecture:</b> follows valeiros, quintas and Mondego stone walls; filtered shade for courtyards.</div>
+      <div class="comfort">Deciduous, tolerates wet soil near foundations.</div>
+      <div class="src">Fonte: <a href="https://1library.org/article/mata-nacional-choupal-os-espa%C3%A7os-verdes-concelho-coimbra.ye9rvreq">Espaços verdes Concelho Coimbra</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="riparian">
+    <div class="img"><img src="images/alnus.jpg" alt="Amieiro Alnus glutinosa" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Amieiro</h2><div class="lat">Alnus glutinosa</div>
+      <div class="loc">Mata climácica ribeirinha</div><span class="tag">Riparian</span>
+      <div class="arch"><b>Architecture:</b> stabilizes banks by bridges, cycle paths and river houses.</div>
+      <div class="comfort">River microclimate, erosion protection for quays.</div>
+      <div class="src">Fonte: <a href="https://pt.wikipedia.org/wiki/Mata_Nacional_do_Choupal">PT Wikipedia Choupal</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="riparian">
+    <div class="img"><img src="images/salix-atrocinerea.jpg" alt="Salgueiro-negro Salix atrocinerea" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Salgueiro-negro</h2><div class="lat">Salix atrocinerea</div>
+      <div class="loc">Mondego / Paul de Arzila</div><span class="tag">Riparian</span>
+      <div class="arch"><b>Architecture:</b> riverfront parks, very high transpiration = cool island by river buildings.</div>
+      <div class="comfort">Traditional pruning keeps views open.</div>
+      <div class="src">Fonte: Espaços verdes Concelho Coimbra (1library)</div>
+    </div>
+  </div>
+
+  <div class="card" data-c="riparian">
+    <div class="img"><img src="images/salix-alba.jpg" alt="Salgueiro-branco Salix alba" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Salgueiro-branco</h2><div class="lat">Salix alba</div>
+      <div class="loc">Choupal Zona Central</div><span class="tag">Riparian</span>
+      <div class="arch"><b>Architecture:</b> larger than atrocinerea, for picnic / sport clearings.</div>
+      <div class="comfort">Light shade for lightweight timber structures.</div>
+      <div class="src">Fonte: Espaços verdes Concelho Coimbra</div>
+    </div>
+  </div>
+
+  <div class="card" data-c="urban">
+    <div class="img"><img src="images/celtis.jpg" alt="Lodão Celtis australis" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Lodão</h2><div class="lat">Celtis australis</div>
+      <div class="loc">Choupal &gt;40m, Alta, largos</div><span class="tag">Urban</span>
+      <div class="arch"><b>Architecture:</b> historic square / cloister tree; low-aggressive roots for limestone paving.</div>
+      <div class="comfort">Dense deciduous crown shades heat-storing stone.</div>
+      <div class="src">Fonte: <a href="https://flora-on.pt/?q=Celtis">Flora-On — sebes em torno de Coimbra</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="urban">
+    <div class="img"><img src="images/ulmus.jpg" alt="Ulmeiro Ulmus minor" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Ulmeiro</h2><div class="lat">Ulmus minor</div>
+      <div class="loc">Ruas, adros, conventos</div><span class="tag">Urban</span>
+      <div class="arch"><b>Architecture:</b> vase shape creates vault over narrow Alta / Baixa streets.</div>
+      <div class="comfort">Channels breeze, street canyon shading.</div>
+      <div class="src">Fonte: <a href="https://pt.wikipedia.org/wiki/Mata_Nacional_do_Choupal">PT Wikipedia Choupal</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="exotic">
+    <div class="img"><img src="images/eucalyptus.jpg" alt="Eucalipto Eucalyptus globulus" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Eucalipto</h2><div class="lat">Eucalyptus globulus / diversicolor</div>
+      <div class="loc">Vale de Canas — 73m, tallest in Europe</div><span class="tag">Exotic</span>
+      <div class="arch"><b>Architecture:</b> contrast with stone; evergreen permanent shade, high water use.</div>
+      <div class="comfort">Negative case: blocks winter solar gain. Energy debate.</div>
+      <div class="src">Fonte: <a href="https://florestas.pt/descobrir/a-arvore-mais-alta-da-europa-e-portuguesa/">Florestas.pt Vale de Canas</a></div>
+    </div>
+  </div>
+
+  <div class="card" data-c="exotic urban">
+    <div class="img"><img src="images/acer.jpg" alt="Ácer Acer pseudoplatanus" loading="lazy"></div>
+    <div class="card-body">
+      <h2>Ácer / Bordo</h2><div class="lat">Acer spp.</div>
+      <div class="loc">Choupal — now dominant, post-Leslie 5000 trees</div><span class="tag">Urban / Exotic</span>
+      <div class="arch"><b>Architecture:</b> autumn colour for university patios and schools; medium scale for 2-3 storey buildings.</div>
+      <div class="comfort">Deciduous: summer shade, winter permeability.</div>
+      <div class="src">Fonte: Espaços verdes Concelho Coimbra / ICNF 2021</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>MARTINS ARGUELLO — form-workshop — Coimbra Trees</div>
+  <div>Fotos: Wikimedia Commons (CC BY-SA) — <a href="https://commons.wikimedia.org/wiki/File:PopulusNigra2a.jpg">Populus</a>, <a href="https://commons.wikimedia.org/wiki/Category:Platanus_%C3%97_hispanica">Platanus</a>, Fraxinus, Alnus, Salix, Celtis, Ulmus, Eucalyptus, Acer. Style: big.dk.</div>
+</footer>
+
+<script>
+document.getElementById('filters').addEventListener('click',e=>{
+  if(e.target.tagName!=='BUTTON')return;
+  document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('on'));
+  e.target.classList.add('on');
+  const f=e.target.dataset.f;
+  document.querySelectorAll('#grid .card').forEach(c=>{
+    c.style.display=(f==='all'||c.dataset.c.includes(f))?'':'none';
+  });
+});
+</script>
+</body>
+</html>
